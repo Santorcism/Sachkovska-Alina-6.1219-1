@@ -1,3 +1,29 @@
+function slider(){
+    return(
+    <div class="slider">
+        <button class="left" onclick="left()">{'<'}</button>
+        <div class="slider_box" id="slider_box">
+            <ul id="list" class="slider_ul">
+                <li class="slider_img"><img src="./assets/images/bridges.jpg" alt="Picture error"></img></li>
+                <li class="slider_img"><img src="./assets/images/bright.jpg" alt="Picture error"></img></li>
+                <li class="slider_img"><img src="./assets/images/coast.jpg" alt="Picture error"></img></li>
+                <li class="slider_img"><img src="./assets/images/italy.jpg" alt="Picture error"></img></li>
+                <li class="slider_img"><img src="./assets/images/orange.jpg" alt="Picture error"></img></li>
+                <li class="slider_img"><img src="./assets/images/purple.jpg" alt="Picture error"></img></li>
+                <li class="slider_img"><img src="./assets/images/river.jpg" alt="Picture error"></img></li>
+                <li class="slider_img"><img src="./assets/images/rome.jpg" alt="Picture error"></img></li>
+            </ul>               
+        </div>            
+        <button class="right" onclick="right()">{'>'}</button>
+    </div>
+    );
+}
+
+ReactDOM.createRoot(document.getElementById("app")).render(
+        <slider />
+);
+
+
 var pic=0;
 
 function left(){

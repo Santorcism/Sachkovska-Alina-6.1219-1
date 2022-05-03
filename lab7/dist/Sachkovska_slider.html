@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="Sachkovska_slider.css">
+
+        <title>Мой сайт</title>
+    </head>
+    <body>
+        <header class="title">
+            <h1>Блог Сачковской Алины Игоревны</h1>
+        </header>
+        <nav class="menu">
+            <ul class="menu_ul">
+                <li><a href = "index.html">Моя страница</a></li>
+                <li><a href = "rozklad.html">Расписание</a></li>
+                <li><a href = "news.html">Новости</a></li>
+                <li><a href = "photo.html">Фотографии</a></li>
+                <li><a href = "Sachkovska_slider.html">Слайдер</a></li>
+            </ul>
+        </nav>
+              
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+        <section class="info">
+            <h2>Слайдер</h2> 
+            <div id="app"> </div>  
+            <div id="form"></div>                    
+            </section>
+        <footer class="contact">
+            <p>Copyright 2022 <a href = "https://moodle.znu.edu.ua/message/index.php?id=33554">Contact me!</a></p>
+        </footer>
+
+        <script src="main.bundle.js"></script>        
+        <script type="text/babel">
+            ReactDOM.createRoot(document.getElementById("app")).render(
+                <div class="slider">
+                <button class="left" onClick={left}>{"<"}</button>
+                <div class="slider_box" id="slider_box">
+                    <ul id="list" class="slider_ul">
+                        <li class="slider_img"><img src="./assets/images/bridges.jpg" alt="Picture error"></img></li>
+                        <li class="slider_img"><img src="./assets/images/bright.jpg" alt="Picture error"></img></li>
+                        <li class="slider_img"><img src="./assets/images/coast.jpg" alt="Picture error"></img></li>
+                        <li class="slider_img"><img src="./assets/images/italy.jpg" alt="Picture error"></img></li>
+                        <li class="slider_img"><img src="./assets/images/orange.jpg" alt="Picture error"></img></li>
+                        <li class="slider_img"><img src="./assets/images/purple.jpg" alt="Picture error"></img></li>
+                        <li class="slider_img"><img src="./assets/images/river.jpg" alt="Picture error"></img></li>
+                        <li class="slider_img"><img src="./assets/images/rome.jpg" alt="Picture error"></img></li>
+                    </ul>               
+                </div>            
+                <button class="right" onClick={right}>{">"}</button>
+            </div>,
+            );
+            ReactDOM.createRoot(document.getElementById("form")).render(
+            <form name="settings" class="settings">
+                <h4>{"Количество картинок:"}</h4>
+                <select id="pics" onChange={picchange}>
+                    <option value="3">{"3"}</option>
+                    <option value="2">{"2"}</option>
+                    <option value="1">{"1"}</option>
+                </select>
+               <h4>{"Ширина слайдера:"}</h4>
+                <select id="width" onChange={widthchange}>
+                    <option value="1535">{"1535px"}</option>
+                    <option value="1020">{"1020px"}</option>
+                    <option value="510">{"510px"}</option>
+                </select>
+                <h4>{"Скорость прокрутки:"}</h4>
+                <select id="speed" onChange={speedchange}>
+                    <option value="0.5s">{"0.5s"}</option>
+                    <option value="1s">{"1s"}</option>
+                    <option value="1.5s">{"1.5s"}</option>
+                    <option value="2s">{"2s"}</option>
+                </select>
+            </form>,
+            );
+
+            var pic=0;
+
+            function left(){
+                if(pic<8-settings.pics){
+                    pic++;
+                    document.getElementById("list").style.transform = "translateX("+(-510)*pic+"px)";
+                } 
+            }
+
+            function right(){
+                if(pic>0){
+                pic--;
+                document.getElementById("list").style.transform = "translateX("+(-510)*pic+"px)"; 
+                } 
+            }
+
+            var settings = new Object();
+            settings.pics = 3;
+
+            function picchange(){
+                settings.pics = document.getElementById("pics").options[document.getElementById("pics").selectedIndex].value;
+                document.getElementById("slider_box").style.width = settings.pics*510 + "px";
+            }
+
+            function widthchange(){
+                settings.width = document.getElementById("width").options[document.getElementById("width").selectedIndex].value;
+                document.getElementById("slider_box").style.width = settings.width + "px";
+                settings.pics = settings.width/510;
+            }
+
+            function speedchange(){
+                settings.speed = document.getElementById("speed").options[document.getElementById("speed").selectedIndex].value;
+                document.getElementById("list").style.transition = "all "+settings.speed;
+            }
+
+        </script>
+
+    </body>
+</html>5

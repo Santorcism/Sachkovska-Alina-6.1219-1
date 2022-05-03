@@ -3,6 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="Sachkovska_slider.css">
+
         <title>Мой сайт</title>
     </head>
     <body>
@@ -18,24 +19,14 @@
                 <li><a href = "Sachkovska_slider.html">Слайдер</a></li>
             </ul>
         </nav>
+              
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
         <section class="info">
             <h2>Слайдер</h2> 
-            <div class="slider">
-                <button class="left" onclick="left()"><</button>
-                <div class="slider_box" id="slider_box">
-                    <ul id="list" class="slider_ul">
-                        <li class="slider_img"><img src="./assets/images/bridges.jpg" alt="Picture error"></li>
-                        <li class="slider_img"><img src="./assets/images/bright.jpg" alt="Picture error"></li>
-                        <li class="slider_img"><img src="./assets/images/coast.jpg" alt="Picture error"></li>
-                        <li class="slider_img"><img src="./assets/images/italy.jpg" alt="Picture error"></li>
-                        <li class="slider_img"><img src="./assets/images/orange.jpg" alt="Picture error"></li>
-                        <li class="slider_img"><img src="./assets/images/purple.jpg" alt="Picture error"></li>
-                        <li class="slider_img"><img src="./assets/images/river.jpg" alt="Picture error"></li>
-                        <li class="slider_img"><img src="./assets/images/rome.jpg" alt="Picture error"></li>
-                    </ul>               
-                </div>            
-                <button class="right" onclick="right()">></button>
-            </div>              
+            <div id="app"> </div>            
             <form name="settings" class="settings">
                 <h4>Количество картинок:</h4>
                 <select id="pics" onchange="picchange()">
