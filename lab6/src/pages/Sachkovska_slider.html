@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="Sachkovska_slider.css">
+        <title>Мой сайт</title>
+    </head>
+    <body>
+        <header class="title">
+            <h1>Блог Сачковской Алины Игоревны</h1>
+        </header>
+        <nav class="menu">
+            <ul class="menu_ul">
+                <li><a href = "index.html">Моя страница</a></li>
+                <li><a href = "rozklad.html">Расписание</a></li>
+                <li><a href = "news.html">Новости</a></li>
+                <li><a href = "photo.html">Фотографии</a></li>
+                <li><a href = "Sachkovska_slider.html">Слайдер</a></li>
+            </ul>
+        </nav>
+        <section class="info">
+            <h2>Слайдер</h2> 
+            <div class="slider">
+                <button class="left" onclick="left()"><</button>
+                <div class="slider_box" id="slider_box">
+                    <ul id="list" class="slider_ul">
+                        <li class="slider_img"><img src="./assets/images/bridges.jpg" alt="Picture error"></li>
+                        <li class="slider_img"><img src="./assets/images/bright.jpg" alt="Picture error"></li>
+                        <li class="slider_img"><img src="./assets/images/coast.jpg" alt="Picture error"></li>
+                        <li class="slider_img"><img src="./assets/images/italy.jpg" alt="Picture error"></li>
+                        <li class="slider_img"><img src="./assets/images/orange.jpg" alt="Picture error"></li>
+                        <li class="slider_img"><img src="./assets/images/purple.jpg" alt="Picture error"></li>
+                        <li class="slider_img"><img src="./assets/images/river.jpg" alt="Picture error"></li>
+                        <li class="slider_img"><img src="./assets/images/rome.jpg" alt="Picture error"></li>
+                    </ul>               
+                </div>            
+                <button class="right" onclick="right()">></button>
+            </div>              
+            <form name="settings" class="settings">
+                <h4>Количество картинок:</h4>
+                <select id="pics" onchange="picchange()">
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+               <h4>Ширина слайдера:</h4>
+                <select id="width" onchange="widthchange()">
+                    <option value="1545">1545px</option>
+                    <option value="1030">1030px</option>
+                    <option value="515">515px</option>
+                </select>
+                <h4>Скорость прокрутки:</h4>
+                <select id="speed" onchange="speedchange()">
+                    <option value="0.5s">0.5s</option>
+                    <option value="1s">1s</option>
+                    <option value="1.5s">1.5s</option>
+                    <option value="2s">2s</option>
+                </select>
+            </form>
+            </section>
+        <footer class="contact">
+            <p>Copyright 2022 <a href = "https://moodle.znu.edu.ua/message/index.php?id=33554">Contact me!</a></p>
+        </footer>
+        <script src="Sachkovska_slider.js"></script>
+        <script src="main.bundle.js"></script>
+    </body>
+</html>
